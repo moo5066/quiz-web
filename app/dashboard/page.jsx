@@ -7,6 +7,7 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { TfiCup } from "react-icons/tfi";
 import { FaBookOpen } from "react-icons/fa";
 import { MdOutlineWatchLater } from "react-icons/md";
+import Link from 'next/link';
 
 
 
@@ -14,6 +15,7 @@ import { MdOutlineWatchLater } from "react-icons/md";
 // Fix: Capitalize the component name (React convention)
 const Page = () => {
   const [activeTab, setActiveTab] = useState('availableQuizzes');
+  const [selectedCategory, setSelectedCategory] = useState('All Subjects');
   return (
     <div className='min-h-screen bg-gray-50'>
     <div className='text-black w-full h-16 mx-auto  border-b border-gray-200 shadow-sm backdrop-blur-lg fixed top-0 left-0 z-10 bg-white/80'>
@@ -37,7 +39,7 @@ const Page = () => {
 
       <div className='pt-24 max-w-7xl mx-auto px-5 py-10 '>
         <div className='mb-6'>
-        <h1 className='font-bold text-2xl'>Student Dashboard</h1> 
+        <h1 className='font-bold text-2xl text-black'>Student Dashboard</h1> 
         <p className='text-gray-400'>Take quizzes and track your progress</p>
         </div>
 <div className='flex flex-col justify-center items-center gap-6  sm:flex-row sm:justify-between max-w-full'>
@@ -94,16 +96,37 @@ const Page = () => {
       {/* The active tab receives a 'bg-white' style as requested. */}
       {/* Also removed invalid 'w-90' and 'animate-pulse' classes. */}
       <div className='w-full max-w-md mx-auto rounded-full bg-gray-100 m-10 p-1 flex items-center justify-around space-x-1'>
-        <button onClick={() => setActiveTab('availableQuizzes')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'availableQuizzes' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
+        <Link href="#" onClick={() => setActiveTab('availableQuizzes')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'availableQuizzes' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
           Available Quizzes
-        </button>
-        <button onClick={() => setActiveTab('myHistory')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'myHistory' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
+        </Link>
+        <Link href="#" onClick={() => setActiveTab('myHistory')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'myHistory' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
           My History
-        </button>
-        <button onClick={() => setActiveTab('leaderboard')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'leaderboard' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
+        </Link>
+        <Link href="#" onClick={() => setActiveTab('leaderboard')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'leaderboard' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
           Leaderboard
-        </button>
-        </div>
+        </Link>
+
+        </div> 
+
+<div className='text-black flex flex-col w-full h-auto p-5 sm:py-10 sm:px-15 border border-gray-200 rounded-lg'>
+  <div>
+    <h1 className='font-semibold text-xl'>Select Category</h1>
+    <p className='text-gray-500'>Filter quizzes by subject</p>
+  </div>
+  
+  <div className='max-w-7xl pt-5 flex flex-wrap gap-3'>
+    
+    <Link href="#" onClick={()=>setSelectedCategory("All Subjects")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'All Subjects' ? 'bg-black text-white' : 'bg-white text-black' } `}>All Subjects</Link>
+    <Link href="#" onClick={()=>setSelectedCategory("Programming")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'Programming' ? 'bg-black text-white' : 'bg-white text-black' } `}>Programming </Link>
+    <Link href="#" onClick={()=>setSelectedCategory("Mathematics")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'Mathematics' ? 'bg-black text-white' : 'bg-white text-black' } `}>Mathematics</Link>
+    <Link href="#" onClick={()=>setSelectedCategory("Science")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'Science' ? 'bg-black text-white' : 'bg-white text-black' } `} >Science</Link>
+    <Link href="#" onClick={()=>setSelectedCategory("History")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'History' ? 'bg-black text-white' : 'bg-white text-black' } `}>History</Link>
+    <Link href="#" onClick={()=>setSelectedCategory("General Knowledge")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'General Knowledge' ? 'bg-black text-white' : 'bg-white text-black' } `}>General Knowledge</Link>
+      
+
+  </div>
+</div>
+
     </div>
     </div>
   )
