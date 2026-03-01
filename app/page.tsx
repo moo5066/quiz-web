@@ -35,9 +35,9 @@ Sing In
      <p className='pt-2 text-center'>Demo Accounts (password:password123)</p>
 </div>
      <div className='flex flex-col space-y-2 justify-center items-center pb-10'>
-    <p className='w-full block text-center border-1 text-center font-semibold text-black border border-gray-400 p-2 rounded-sm hover:border-blue-500 '>Admin Demo</p>
-    <p className='w-full block text-center border-1 text-center font-semibold text-black border border-gray-400 p-2 rounded-sm hover:border-blue-500 '>Teacher Demo</p>
-    <p className='w-full block text-center border-1 text-center font-semibold text-black border border-gray-400 p-2 rounded-sm hover:border-blue-500 '>Student Demo</p>
+    <p className='w-full block text-center   font-semibold text-black border border-gray-200 p-2 rounded-sm hover:border-blue-300 '>Admin Demo</p>
+    <p className='w-full block text-center   font-semibold text-black border border-gray-200 p-2 rounded-sm hover:border-blue-300 '>Teacher Demo</p>
+    <p className='w-full block text-center  font-semibold text-black border border-gray-200 p-2 rounded-sm hover:border-blue-300 '>Student Demo</p>
    
      </div>
     </div>
