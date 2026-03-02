@@ -99,10 +99,10 @@ const Page = () => {
         <Link href="#" onClick={() => setActiveTab('availableQuizzes')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'availableQuizzes' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
           Available Quizzes
         </Link>
-        <Link href="#" onClick={() => setActiveTab('myHistory')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'myHistory' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
+        <Link href="/my-history" onClick={() => setActiveTab('myHistory')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'myHistory' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
           My History
         </Link>
-        <Link href="#" onClick={() => setActiveTab('leaderboard')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'leaderboard' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
+        <Link href="/leaderboard" onClick={() => setActiveTab('leaderboard')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'leaderboard' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
           Leaderboard
         </Link>
 

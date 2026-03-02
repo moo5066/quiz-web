@@ -7,8 +7,8 @@ const page = () => {
   
   return (
     <div className='text-black max-h-screen maxw-7xl'>
-        <div className='flex justify-between items-center mt-50 gap-5 '>
-                    <Link href="/dashboard" className='absolute left-0 top-0 p-5 text-gray-300 hover:text-black'><IoMdArrowRoundBack size={40}/>Dashboard</Link>
+        <div className='flex  items-center mt-50 gap-5 '>
+                    <Link href="/dashboard" className='absolute left-0 top-0 p-5 text-black'><IoMdArrowRoundBack size={20}/></Link>
    <div className='border border-gray-300 w-[400px] h-60 sm:h-50 p-3 rounded-md rounded-lg mx-5 '>
     <div className='flex justify-between space-x-10'>
         <GiOpenBook  size={40} className='bg-blue-200 p-2 text-blue-500 rounded-lg'/>
