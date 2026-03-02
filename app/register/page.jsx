@@ -53,7 +53,7 @@ const Register = () => {
 }} href="#" className='block w-full bg-black text-white text-center p-2 rounded-md font-bold transition-transform duration-300 hover:scale-105'>Create Account</Link>
 </div>
 <div className='pt-10'>
-  <p>Already have an account?<Link  href="login"className='text-blue-600 text-center p-1'>Sing in here</Link></p>
+  <p>Already have an account?<Link  href="/"className='text-blue-600 text-center p-1'>Sing in here</Link></p>
 </div>
 </div>
       </div>

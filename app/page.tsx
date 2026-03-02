@@ -20,7 +20,7 @@ const Login = () => {
      <input type="text" placeholder="Username" className="border border-gray-300 rounded px-2 py-2 mb-4 w-full" value={username} onChange={(e) => setUsername(e.target.value)}/>
      <input type="password" placeholder="Password" className="border border-gray-300 rounded px-2 py-2 mb-4 w-full" value={password} onChange={(e) => setPassword(e.target.value)}/>
 
-     <Link href="/" onClick={(e) => {
+     <Link href="/dashboard" onClick={(e) => {
        if (!username || !password) {
          e.preventDefault()
          alert("plz fill in the eamil ans password")

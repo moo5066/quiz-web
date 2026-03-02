@@ -6,7 +6,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 const page = () => {
   return (
     <div className='text-black flex justify-around mt-50'>
-        <Link href="/dashboard" className='absolute left-0 top-0 p-5'><IoMdArrowRoundBack size={40}/></Link>
+        <Link href="/dashboard" className='absolute left-0 top-0 p-5 text-black'><IoMdArrowRoundBack size={20}/></Link>
        <div className='border border-gray-300 w-[400px] h-60 sm:h-50 p-3  rounded-lg mx-5 '>
     <div className='flex justify-between space-x-10'>
      <GiOpenBook  size={40} className='bg-blue-200 p-2 text-blue-500 rounded-lg'/>  

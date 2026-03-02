@@ -118,10 +118,10 @@ const Page = () => {
     
     <Link href="/All-Subjects" onClick={()=>setSelectedCategory("All Subjects")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'All Subjects' ? 'bg-black text-white' : 'bg-white text-black' } `}>All Subjects</Link>
     <Link href="/Programming" onClick={()=>setSelectedCategory("Programming")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'Programming' ? 'bg-black text-white' : 'bg-white text-black' } `}>Programming </Link>
-    <Link href="#" onClick={()=>setSelectedCategory("Mathematics")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'Mathematics' ? 'bg-black text-white' : 'bg-white text-black' } `}>Mathematics</Link>
-    <Link href="#" onClick={()=>setSelectedCategory("Science")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'Science' ? 'bg-black text-white' : 'bg-white text-black' } `} >Science</Link>
-    <Link href="#" onClick={()=>setSelectedCategory("History")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'History' ? 'bg-black text-white' : 'bg-white text-black' } `}>History</Link>
-    <Link href="#" onClick={()=>setSelectedCategory("General Knowledge")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'General Knowledge' ? 'bg-black text-white' : 'bg-white text-black' } `}>General Knowledge</Link>
+    <Link href="/math" onClick={()=>setSelectedCategory("Mathematics")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'Mathematics' ? 'bg-black text-white' : 'bg-white text-black' } `}>Mathematics</Link>
+    <Link href="/sceince" onClick={()=>setSelectedCategory("Science")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'Science' ? 'bg-black text-white' : 'bg-white text-black' } `} >Science</Link>
+    <Link href="/history" onClick={()=>setSelectedCategory("History")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'History' ? 'bg-black text-white' : 'bg-white text-black' } `}>History</Link>
+    <Link href="/general-knowladge" onClick={()=>setSelectedCategory("General Knowledge")} className={`border border-gray-300 rounded-lg p-1 ${selectedCategory === 'General Knowledge' ? 'bg-black text-white' : 'bg-white text-black' } `}>General Knowledge</Link>
       
 
   </div>
