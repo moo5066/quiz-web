@@ -19,7 +19,7 @@ const page = () => {
         <h1 className='text-xl font-bold'>JavaScript Basics</h1>
         <p className='text-gray-500'>Programming</p>
     </div>
-    <Link href="#" className='py-2 block w-[90%]  mx-auto bg-black text-white p-1 text-center rounded-lg font-semibold' >Start Quiz</Link>
+    <Link href="/All-Subjects/quiz-1" className='py-2 block w-[90%]  mx-auto bg-black text-white p-1 text-center rounded-lg font-semibold' >Start Quiz</Link>
   </div>
 
     <div className='border border-gray-300 w-[400px] h-60 sm:h-50 p-3 rounded-md rounded-lg mx-5 '>
