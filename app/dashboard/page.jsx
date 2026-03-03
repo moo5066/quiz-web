@@ -31,7 +31,7 @@ const Page = () => {
        </div>
 
        <div className='flex gap-2 border p-1 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-300 border-gray-300 shadow-sm'>
-<LuLogOut size={20} className='font-bold'/>
+<Link href="/register"><LuLogOut size={20} className='font-bold'/></Link>
 <p>Logout</p>
        </div>
       </nav> 
@@ -133,3 +133,4 @@ const Page = () => {
 }
 
 export default Page
+
