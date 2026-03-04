@@ -91,8 +91,8 @@ const Page = () => {
   const progress = ((currentQuestionIndex + 1) / quizData.length) * 100;
 
   return (
-    <div className='text-black bg-indigo-50 h-screen w-screen'>
-      <div className='p-10'>
+    <div className='text-black  h-screen flex flex-col  '>
+      <div className='p-10 w-[70%] mx-auto mt-20 bg-indigo-50 rounded-lg shadow-md'>
         <div className='flex justify-between items-center pt-10'>
           <div>
             <h1 className='font-bold text-xl'>JavaScript Basics</h1>
@@ -123,7 +123,7 @@ const Page = () => {
                   selectedAnswer === null
                     ? 'bg-white hover:bg-gray-100'
                     : option === currentQuestion.answer
-                    ? 'bg-green-200 border-green-500'
+                    ? 'bg-green-200 border-gray-500'
                     : option === selectedAnswer
                     ? 'bg-red-200 border-red-500'
                     : 'bg-white'
