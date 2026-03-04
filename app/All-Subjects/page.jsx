@@ -33,7 +33,7 @@ const page = () => {
 </h1>
         <p className='text-gray-500'>Programming</p>
     </div>
-    <Link href="#" className='py-2 block w-[90%]  mx-auto bg-black text-white p-1 text-center rounded-lg font-semibold' >Start Quiz</Link>
+    <Link href="/All-Subjects/react-quiz" className='py-2 block w-[90%]  mx-auto bg-black text-white p-1 text-center rounded-lg font-semibold' >Start Quiz</Link>
   </div>
 
    
