@@ -18,7 +18,7 @@ const page = () => {
               <h1 className='text-xl font-bold'>Algebra Basics</h1>
               <p className='text-gray-500'>Math</p>
           </div>
-          <Link href="" className='py-2 block w-[90%]  mx-auto bg-black text-white p-1 text-center rounded-lg font-semibold' >Start Quiz</Link>
+          <Link href="/math/math-quiz" className='py-2 block w-[90%]  mx-auto bg-black text-white p-1 text-center rounded-lg font-semibold' >Start Quiz</Link>
         </div>
     </div>
   )
