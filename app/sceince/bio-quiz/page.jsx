@@ -37,7 +37,7 @@ const Page = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
   const [showResults, setShowResults] = useState(false);
-  const [seconds, setSeconds] = useState(30); // As per the card, 40s/question
+  const [seconds, setSeconds] = useState(40); // As per the card, 40s/question
 
   useEffect(() => {
     // Timer logic
@@ -59,7 +59,7 @@ const Page = () => {
 
   const handleNext = () => {
     setSelectedAnswer(null);
-    setSeconds(30); // Reset timer for the next question
+    setSeconds(40); // Reset timer for the next question
     if (currentQuestionIndex < quizData.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
@@ -116,7 +116,7 @@ const Page = () => {
           <div className='flex flex-col gap-4'>
             {currentQuestion.options.map((option, index) => (
               <button
-                key={index}
+                key={option}
                 onClick={() => handleAnswerClick(option)}
                 disabled={selectedAnswer !== null}
                 className={`p-4 text-left rounded-lg border ${
@@ -136,12 +136,12 @@ const Page = () => {
         </div>
 
         <div className='flex justify-end mt-8'>
-          <Link href='#'
+          <button
             onClick={handleNext}
             className='bg-black text-white font-bold py-2 px-8 rounded-lg hover:bg-gray-800'
           >
             Next
-          </Link>
+          </button>
         </div>
       </div>
     </div>

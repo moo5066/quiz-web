@@ -116,7 +116,7 @@ const Page = () => {
           <div className='flex flex-col gap-4'>
             {currentQuestion.options.map((option, index) => (
               <button
-                key={index}
+                key={option}
                 onClick={() => handleAnswerClick(option)}
                 disabled={selectedAnswer !== null}
                 className={`p-4 text-left rounded-lg border ${
@@ -136,12 +136,12 @@ const Page = () => {
         </div>
 
         <div className='flex justify-end mt-8'>
-          <Link href='#'
+          <button
             onClick={handleNext}
             className='bg-black text-white font-bold py-2 px-8 rounded-lg hover:bg-gray-800'
           >
             Next
-          </Link>
+          </button>
         </div>
       </div>
     </div>

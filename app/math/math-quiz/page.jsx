@@ -136,12 +136,12 @@ const Page = () => {
         </div>
 
         <div className='flex justify-end mt-8'>
-          <Link href='#'
+          <button
             onClick={handleNext}
             className='bg-black text-white font-bold py-2 px-8 rounded-lg hover:bg-gray-800'
           >
             Next
-          </Link>
+          </button>
         </div>
       </div>
     </div>

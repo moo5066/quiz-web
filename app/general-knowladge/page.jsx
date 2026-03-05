@@ -2,7 +2,7 @@ import React from 'react'
 import { GiOpenBook } from "react-icons/gi";
 import Link from 'next/link';
 import { IoMdArrowRoundBack } from "react-icons/io";
-const page = () => {
+const Page = () => {
   return (
     <div className='text-black mt-100'>
                 <Link href="/dashboard" className='absolute left-0 top-0 p-5 text-black'><IoMdArrowRoundBack size={20}/></Link>
@@ -17,10 +17,10 @@ const page = () => {
         <h1 className='text-xl font-bold'>World Geography</h1>
         <p className='text-gray-500'>General Knowledge</p>
     </div>
-    <Link href="#" className='py-2 block w-[90%]  mx-auto bg-black text-white p-1 text-center rounded-lg font-semibold' >Start Quiz</Link>
+    <Link href="/general-knowladge/world-geography" className='py-2 block w-[90%]  mx-auto bg-black text-white p-1 text-center rounded-lg font-semibold' >Start Quiz</Link>
   </div>
     </div>
   )
 }
 
-export default page
+export default Page
