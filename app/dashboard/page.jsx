@@ -1,6 +1,6 @@
 "use client";
 // Fix: Import useState from 'react' to use the hook
-import  { useState } from 'react'
+import  { useState, useEffect } from 'react'
 import { FaGraduationCap } from "react-icons/fa";
 import { LuLogOut } from "react-icons/lu";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
@@ -8,14 +8,73 @@ import { TfiCup } from "react-icons/tfi";
 import { FaBookOpen } from "react-icons/fa";
 import { MdOutlineWatchLater } from "react-icons/md";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 
 
 
 // Fix: Capitalize the component name (React convention)
 const Page = () => {
+  const pathname = usePathname();
+  // The activeTab state is no longer needed for the tabs, as the active state is derived from the URL pathname.
   const [activeTab, setActiveTab] = useState('availableQuizzes');
   const [selectedCategory, setSelectedCategory] = useState('All Subjects');
+  const [stats, setStats] = useState({
+    quizzesTaken: 0,
+    totalScore: 0,
+    availableQuizzes: 0,
+    subjects: 0,
+  });
+
+  useEffect(() => {
+    // This is where you would fetch data from your API.
+    // For demonstration, we're using a timeout to simulate a network request.
+    const fetchDashboardData = async () => {
+      // Example:
+      // const response = await fetch('/api/dashboard-stats');
+      // const data = await response.json();
+      // setStats(data);
+
+      // Using mock data for now.
+      setTimeout(() => {
+        setStats({ quizzesTaken: 12, totalScore: 1080, availableQuizzes: 5, subjects: 5 });
+      }, 1000);
+    };
+
+    fetchDashboardData();
+  }, []); // The empty dependency array ensures this effect runs only once on mount.
+
+  const dashboardCards = [
+    {
+      title: 'Quizzes Taken',
+      value: stats.quizzesTaken,
+      Icon: IoMdCheckmarkCircleOutline,
+      iconColor: 'text-blue-800',
+      bgColor: 'bg-blue-300',
+    },
+    {
+      title: 'Total Score',
+      value: stats.totalScore,
+      Icon: TfiCup,
+      iconColor: 'text-yellow-800',
+      bgColor: 'bg-yellow-300',
+    },
+    {
+      title: 'Available Quizzes',
+      value: stats.availableQuizzes,
+      Icon: FaBookOpen,
+      iconColor: 'text-green-800',
+      bgColor: 'bg-green-300',
+    },
+    {
+      title: 'Subjects',
+      value: stats.subjects,
+      Icon: MdOutlineWatchLater,
+      iconColor: 'text-purple-800',
+      bgColor: 'bg-purple-300',
+    },
+  ];
+
   return (
     <div className='min-h-screen bg-gray-50'>
     <div className='text-black w-full h-16 mx-auto  border-b border-gray-200 shadow-sm backdrop-blur-lg fixed top-0 left-0 z-10 bg-white/80'>
@@ -42,67 +101,34 @@ const Page = () => {
         <h1 className='font-bold text-2xl text-black'>Student Dashboard</h1> 
         <p className='text-gray-400'>Take quizzes and track your progress</p>
         </div>
-<div className='flex flex-col justify-center items-center gap-6  sm:flex-row sm:justify-between max-w-full'>
-        {/* Fix: Reduced padding to p-4 because p-12 (3rem) exceeds h-20 (5rem) height */}
-        <div className='w-full sm:flex-1 h-20 border flex justify-between items-center gap-5  p-4 rounded-lg shadow-sm border-gray-300 bg-white text-black'>
-            <div className='flex flex-col'>
-                <p className='text-gray-600'>Quizzes Taken</p>
-                <h1 className='font-bold text-3xl'>0</h1>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+          {dashboardCards.map((card) => (
+            <div key={card.title} className='w-full h-20 border flex justify-between items-center gap-5 p-4 rounded-lg shadow-sm border-gray-300 bg-white text-black'>
+              <div className='flex flex-col'>
+                <p className='text-gray-600'>{card.title}</p>
+                <h1 className='font-bold text-3xl'>{card.value}</h1>
+              </div>
+              <div className={`${card.bgColor} p-2 rounded-full text-white`}>
+                <card.Icon size={30} className={card.iconColor} />
+              </div>
             </div>
-            <div className='bg-blue-300 p-2 rounded-full text-white'>
-            <IoMdCheckmarkCircleOutline size={30} className='text-blue-800'/>
-</div>
-</div>
-
-        {/* Fix: Reduced padding to p-4 */}
-        <div className='w-full sm:flex-1 h-20 border flex justify-between items-center gap-5 p-4 rounded-lg shadow-sm border-gray-300 bg-white text-black'>
-            <div  >
-                <p className='text-gray-600'>Total Score</p>
-                <h1 className='font-bold text-3xl'>0</h1>
-            </div>
-            <div className='bg-yellow-300 p-2 rounded-full text-white'>
-            <TfiCup size={30} className='text-yellow-800'/>
-</div>
-</div>
-
-        {/* Fix: Reduced padding to p-4 */}
-        <div className='w-full sm:flex-1 h-20 border flex justify-between items-center  gap-5 p-4 rounded-lg shadow-sm border-gray-300 bg-white text-black'>
-            <div className='flex flex-col'>
-                <p className='text-gray-600 w-full'>Available Quizzes</p>
-                <h1 className='font-bold text-3xl'>5</h1>
-            </div>
-            <div className='bg-green-300 p-3 rounded-full'>
-            <FaBookOpen size={30} className='text-blue-600'/>
-            </div>
-</div>
-
-        {/* Fix: Reduced padding to p-4 */}
-        <div className='w-full sm:flex-1 h-20 border flex justify-between items-center  gap-5 p-4 rounded-lg shadow-sm border-gray-300 bg-white text-black'>
-            <div className='flex flex-col'>
-                <p className='text-gray-600'>Subjects</p>
-                <h1 className='font-bold text-3xl'>5</h1>
-            </div>
-            <div className='bg-purple-300 p-2 rounded-full text-white'>
-            <MdOutlineWatchLater size={30} className='text-purple-800'/>
-</div>
-</div>
-
-
-        
-      </div>
+          ))}
+        </div>
 
       {/* Fix: Replaced flawed tab structure with a functional and accessible one using buttons. */}
       {/* Each tab button updates the activeTab state on click. */}
       {/* The active tab receives a 'bg-white' style as requested. */}
       {/* Also removed invalid 'w-90' and 'animate-pulse' classes. */}
       <div className='w-full max-w-md mx-auto rounded-full bg-gray-100 m-10 p-1 flex items-center justify-around space-x-1'>
-        <Link href="#" onClick={() => setActiveTab('availableQuizzes')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'availableQuizzes' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
+        {/* The `href` now points to the dashboard page. The active state is determined by the `pathname`. */}
+        <Link href="/dashboard" className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${pathname === '/dashboard' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
           Available Quizzes
         </Link>
-        <Link href="/my-history" onClick={() => setActiveTab('myHistory')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'myHistory' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
+        {/* The onClick handler is removed because navigation is handled by Next.js Link. */}
+        <Link href="/my-history" className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${pathname === '/my-history' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
           My History
         </Link>
-        <Link href="/leaderboard" onClick={() => setActiveTab('leaderboard')} className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeTab === 'leaderboard' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
+        <Link href="/leaderboard" className={`w-1/3 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${pathname === '/leaderboard' ? 'bg-white text-black shadow' : 'text-gray-600 hover:bg-gray-200'}`}>
           Leaderboard
         </Link>
 
@@ -133,4 +159,3 @@ const Page = () => {
 }
 
 export default Page
-
